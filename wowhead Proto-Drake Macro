@@ -1,0 +1,78 @@
+# From https://www.wowhead.com/guides/time-lost-proto-drake-mount#spawn-maps-spawn-point-screenshots | https://pastebin.com/8Vz0sZia
+
+
+Aeonaxx, Time-Lost Proto-Drake and Poseidus (Blood Seeker and Vyragosa too) Target Macro
+------------------------------------------
+/tar Time-lost
+/tar Aeonaxx
+/tar Blood Seeker
+/tar Poseidus
+/tar Vyragosa
+/run local N = UnitName("Target");if N and (N=="Aeonaxx" or string.find(N,"Time-Lost") or N=="Poseidus") then PlaySound(13363);print(date(),N,"Found");SetRaidTarget("target",8);end
+ 
+ 
+Aeonaxx, Time-Lost Proto-Drake and Poseidus (Blood Seeker and Vyragosa too) Target Macro, focus target and without Sound 
+------------------------------------------
+/tar Time-lost
+/tar Aeonaxx
+/tar Blood Seeker
+/tar Poseidus
+/tar Vyragosa
+/focus
+/run local N = UnitName("Target");if N and (N=="Aeonaxx" or string.find(N,"Time-Lost") or N=="Poseidus") then print(date(),N,"Found");SetRaidTarget("target",8);end
+ 
+ 
+Edge of Reality (Voidtalon of the Dark Star) with screenshot and sound. Click before searching.
+------------------------------------------
+/run local x GameTooltip:HookScript("OnSizeChanged", function() if GameTooltipTextLeft1:GetText() == "Edge of Reality" then if not x then PlaySound(13363) PlaySound(63971) PlaySound(11773) Screenshot() x=true end end end)
+ 
+ 
+Edge of Reality (Voidtalon of the Dark Star) without screenshot but sound. Click before searching.
+------------------------------------------
+/run local x GameTooltip:HookScript("OnSizeChanged", function() if GameTooltipTextLeft1:GetText() == "Edge of Reality" then PlaySound(13363) PlaySound(63971) PlaySound(11773) end end)
+ 
+ 
+Mysterious Camel Figurine, Enables friendly nameplates and sets max distance you can see the nameplate at.
+If you use ElvUI go to Nameplates > General Options > Load Distance and set it to 100
+/run SetCVar("nameplateShowFriendlyNPCs",1)
+/run SetCVar("nameplateShowFriends",1)
+/run SetCVar("nameplateMaxDistance",100)
+ 
+Optional, makes the nameplates larger
+/run SetCVar("nameplateHorizontalScale",1.4)
+/run SetCVar("nameplateVerticalScale",2.7)
+ 
+To disable
+/run SetCVar("nameplateShowFriendlyNPCs",0)
+/run SetCVar("nameplateShowFriends",0)
+/run SetCVar("nameplateMaxDistance",60)
+ 
+/run SetCVar("nameplateHorizontalScale",1)
+/run SetCVar("nameplateVerticalScale",1)
+ 
+Draenor Rares Target Macro with sound.
+------------------------------------------
+/tar Gorok
+/tar Luk’hok
+/tar Nakk the Thunderer
+/tar Pathrunner
+/tar Poundfist
+/tar Silthide
+/run local N = UnitName("Target");if N then PlaySound(13363);print(date(),N,"Found");SetRaidTarget("target",8);end
+ 
+ 
+Draenor Rares Target Macro with focus and without sound.
+------------------------------------------
+/tar Gorok
+/tar Luk’hok
+/tar Nakk the Thunderer
+/tar Pathrunner
+/tar Poundfist
+/tar Silthide
+/focus
+/run local N = UnitName("Target");if N then print(date(),N,"Found");SetRaidTarget("target",8);end
+ 
+ 
+Ephemeral Crystal (Long-Forgotten Hippogryph) Mouseover Macro. Click before searching.
+------------------------------------------
+/run local x GameTooltip:HookScript("OnSizeChanged", function() if GameTooltipTextLeft1:GetText() == "Ephemeral Crystal" then PlaySound(63971) end end)
